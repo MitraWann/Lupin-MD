@@ -1,0 +1,52 @@
+{
+  "120363409360097923@g.us": {
+    "isMuted": false,
+    "welcome": true,
+    "antiLink": false,
+    "delete": false,
+    "detect": false,
+    "expired": 0,
+    "descUpdate": false,
+    "stiker": false
+  },
+  "120363406727405732@g.us": {
+    "isMuted": false,
+    "welcome": true,
+    "antiLink": false,
+    "delete": false,
+    "detect": false,
+    "expired": 0,
+    "descUpdate": false,
+    "stiker": false
+  },
+  "120363284305573016@g.us": {
+    "isMuted": true,
+    "welcome": true,
+    "antiLink": true,
+    "delete": false,
+    "detect": false,
+    "expired": 865771072210760,
+    "descUpdate": false,
+    "stiker": false
+  },
+  "120363424720606794@g.us": {
+    "isMuted": false,
+    "welcome": true,
+    "antiLink": false,
+    "delete": false,
+    "detect": false,
+    "expired": 0,
+    "descUpdate": false,
+    "stiker": false
+  },
+  "120363208757055493@g.us": {
+    "isMuted": false,
+    "welcome": true,
+    "antiLink": false,
+    "delete": false,
+    "detect": false,
+    "expired": 0,
+    "descUpdate": false,
+    "stiker": false
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "settings": {
+    "global": {
+      "all": false,
+      "private": false,
+      "voice": true,
+      "defaultVoice": "bella"
+    }
+  },
+  "memory": {}
+}
