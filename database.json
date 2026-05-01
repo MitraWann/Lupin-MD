@@ -51,7 +51,7 @@
       "level": 0,
       "location": "Gubuk",
       "pc": 0,
-      "exp": 742,
+      "exp": 965,
       "limit": 100,
       "token": 10,
       "skata": 0,
@@ -87,9 +87,9 @@
       "title": 0,
       "coin": 0,
       "bank": 0,
-      "command": null,
-      "commandTotal": null,
-      "lastCmd": 1777590388150,
+      "command": 9,
+      "commandTotal": 9,
+      "lastCmd": 1777621753017,
       "vebriy": false,
       "vebriy_history": [
         {
@@ -4467,10 +4467,10 @@
       "lastSuccess": 1775476361857
     },
     "owner-getfile.js": {
-      "total": 56,
-      "success": 50,
-      "last": 1776946447126,
-      "lastSuccess": 1776946447126
+      "total": 59,
+      "success": 53,
+      "last": 1777621753314,
+      "lastSuccess": 1777621753314
     },
     "owner-deletefile.js": {
       "total": 23,
@@ -4977,10 +4977,10 @@
       "lastSuccess": 1777563855575
     },
     "owner-github.js": {
-      "total": 80,
-      "success": 80,
-      "last": 1777493984591,
-      "lastSuccess": 1777493984591
+      "total": 81,
+      "success": 81,
+      "last": 1777621488580,
+      "lastSuccess": 1777621488580
     },
     "rpg-hitman.js": {
       "total": 2,
@@ -5799,10 +5799,10 @@
       "lastSuccess": 1775784848417
     },
     "owner-savefile.js": {
-      "total": 19,
-      "success": 19,
-      "last": 1776904103834,
-      "lastSuccess": 1776904103834
+      "total": 22,
+      "success": 22,
+      "last": 1777621721694,
+      "lastSuccess": 1777621721694
     },
     "xdownloader-youtube2.js": {
       "total": 9,
@@ -6081,10 +6081,10 @@
       "lastSuccess": 1777502676763
     },
     "owner-tree.js": {
-      "total": 2,
-      "success": 2,
-      "last": 1777522940941,
-      "lastSuccess": 1777522940941
+      "total": 4,
+      "success": 4,
+      "last": 1777621734334,
+      "lastSuccess": 1777621734334
     }
   },
   "msgs": {},
