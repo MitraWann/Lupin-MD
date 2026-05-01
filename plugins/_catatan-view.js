@@ -23,7 +23,7 @@ conn.reply(m.chat, `${isi}`, m, false, {
 }
 
 handler.help = ['lihatcatatan <title>']
-handler.tags = ['asisten']
+handler.tags = ['database']
 handler.command = /^lihatcatatan$/i
 
 module.exports = handler

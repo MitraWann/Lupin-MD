@@ -1,8 +1,8 @@
 {
-  "name": "rtxzy",
+  "name": "Lupin-MD",
   "description": "Lightweight WhatsApp Bot",
-  "repository": "https://github.com/BOTCAHX/RTXZY-MD",
-  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "repository": "https://github.com/MitraWann/Lupin-MD",
+  "base": "RTXZYBOT By BOTCAHX",
   "keywords": [
         "whatsapp-bot-md",
         "whatsapp-bot",
@@ -12,7 +12,6 @@
         "Games-wabot",
         "wabot-aq",
         "whiskeysockets",
-        "botcahx",
         "baileys"
   ]
 }

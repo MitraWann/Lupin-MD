@@ -1,6 +1,6 @@
 {
-    "name": "rtxzy",
-    "version": "8.0.3",
+    "name": "Lupin-MD",
+    "version": "1.0.0",
     "description": "Lightweight WhatsApp Bot",
     "depecrated": false,
     "main": "index.js",
@@ -23,19 +23,18 @@
         "Games-wabot",
         "wabot-aq",
         "whiskeysockets",
-        "botcahx",
         "baileys"
     ],
-    "homepage": "https://github.com/BOTCAHX/RTXZY-MD",
+    "homepage": "https://github.com/MitraWann/Lupin-MD",
     "author": {
-        "name": "BOTCAHX"
+        "name": "Wann"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/BOTCAHX/RTXZY-MD.git"
+        "url": "git+https://github.com/MitraWann/Lupin-MD.git"
     },
     "bugs": {
-        "url": "https://github.com/BOTCAHX/RTXZY-MD/issues"
+        "url": "https://github.com/MitraWann/Lupin-MD/issues"
     },
     "license": "MIT",
     "dependencies": {

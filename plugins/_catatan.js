@@ -20,7 +20,7 @@ let handler = async(m, {conn, command, usedPrefix, text}) => {
 }
 
 handler.help = ['buatcatatan <title|isi>']
-handler.tags = ['asisten']
+handler.tags = ['database']
 handler.command = /^buatcatatan$/i
 
 module.exports = handler
