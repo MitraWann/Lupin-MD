@@ -7,7 +7,7 @@
       "level": 0,
       "location": "Gubuk",
       "pc": 0,
-      "exp": 1,
+      "exp": 153,
       "limit": 100,
       "token": 10,
       "skata": 0,
@@ -51,7 +51,7 @@
       "level": 0,
       "location": "Gubuk",
       "pc": 0,
-      "exp": 965,
+      "exp": 1542,
       "limit": 100,
       "token": 10,
       "skata": 0,
@@ -87,9 +87,9 @@
       "title": 0,
       "coin": 0,
       "bank": 0,
-      "command": 9,
-      "commandTotal": 9,
-      "lastCmd": 1777621753017,
+      "command": 34,
+      "commandTotal": 34,
+      "lastCmd": 1778272477915,
       "vebriy": false,
       "vebriy_history": [
         {
@@ -107,6 +107,14 @@
         {
           "role": "bot",
           "text": "Halo! Sebagai Vebriy, aku siap membantu.\n\nTapi sepertinya gambarnya *belum muncul atau belum terlampir* di chat kita nih. Kamu bisa klik ikon gambar atau *plus* (+), lalu pilih foto yang ingin kamu bahas dan kirim ke sini.\n\nBegitu fotonya masuk, aku bakal langsung lihat dan kita bisa mulai analisisnya. Mau bahas apa dulu kalau fotonya sudah ada?"
+        },
+        {
+          "role": "user",
+          "text": "apa itu obfuscate, bagaimana cara kerjanya"
+        },
+        {
+          "role": "bot",
+          "text": "Halo! Vebriy di sini. Pertanyaan bagus, ini topik yang seru banget kalau kamu suka dunia *coding* atau keamanan siber.\n\nSecara sederhana, *obfuscate* (atau obfuscation) adalah proses sengaja mengubah kode sumber (*source code*) sebuah aplikasi menjadi sangat sulit dibaca dan dimengerti oleh manusia, tapi *tetap bisa dijalankan dengan sempurna* oleh komputer.\n\nBayangkan kamu menulis surat rahasia. Bukannya dikunci di brankas (itu enkripsi), kamu malah menulisnya dengan tata bahasa yang berantakan, singkatan yang aneh, dan urutan kalimat yang acak-acakan—tapi kalau dibaca pakai kacamata khusus, pesannya tetap sampai.\n\n---\n\n### Bagaimana Cara Kerjanya?\n\nAda beberapa teknik yang biasa dilakukan untuk mengaburkan kode tersebut:\n\n*   *Mengganti Nama (Renaming):* \n    Nama variabel atau fungsi yang tadinya jelas seperti `hitungTotalHarga()` diubah menjadi nama yang tidak bermakna seperti `a()`, `b12()`, atau `_0x4f2a`.\n*   *Menghapus Metadata:* \n    Semua komentar, spasi, dan indentasi yang gunanya mempermudah programmer membaca kode akan dihapus total.\n*   *Logika yang Berputar-putar (Control Flow Flattening):* \n    Struktur kode `if-else` atau `loop` yang sederhana diubah menjadi sangat kompleks dan melompat-lompat, sehingga logika programnya jadi susah diikuti.\n*   *Penyisipan Kode Sampah (Dead Code Insertion):* \n    Menambahkan perintah-perintah yang sebenarnya tidak berguna di dalam program hanya untuk membingungkan orang yang mencoba melakukan *reverse engineering*.\n\n---\n\n### Kenapa Harus Melakukan Obfuscate?\n\nAda beberapa alasan kuat kenapa pengembang aplikasi melakukan ini:\n\n1.  *Melindungi Kekayaan Intelektual:* Supaya algoritma rahasia atau cara kerja unik aplikasi kamu tidak gampang dicontek kompetitor.\n2.  *Keamanan:* Mempersulit peretas (*hacker*) untuk menemukan celah keamanan dalam kode kamu.\n3.  *Mencegah Pembajakan:* Mempersulit orang untuk memodifikasi lisensi atau fitur premium di dalam aplikasi.\n\n### Perbedaan Penting: Obfuscation vs Encryption\n\n| Fitur | Obfuscation | Encryption |\n| :--- | :--- | :--- |\n| *Tujuan* | Membuat kode sulit dipahami. | Menyembunyikan data agar tidak bisa dibaca tanpa kunci. |\n| *Eksekusi* | Kode tetap bisa dijalankan langsung. | Kode harus didekripsi dulu sebelum bisa dijalankan. |\n\n*Catatan dari Vebriy:* \nMeskipun *obfuscation* bikin kode jadi \"ruwet\", ini bukan jaminan keamanan 100%, ya. *Hacker* yang gigih tetap bisa melakukan *de-obfuscate* (mengembalikan kodenya), meski butuh waktu yang lama banget.\n\nKamu lagi ada rencana mau mengamankan proyek *coding* tertentu, atau cuma penasaran sama istilahnya aja nih?"
         }
       ]
     },
@@ -117,8 +125,8 @@
       "level": 0,
       "location": "Gubuk",
       "pc": 0,
-      "exp": 23,
-      "limit": 100,
+      "exp": 45,
+      "limit": 99,
       "token": 10,
       "skata": 0,
       "lastkerja": 0,
@@ -152,7 +160,10 @@
       "energi": 100,
       "title": 0,
       "coin": 0,
-      "bank": 0
+      "bank": 0,
+      "command": null,
+      "commandTotal": null,
+      "lastCmd": 1778237468597
     },
     "221203734204662@lid": {
       "taxi": 0,
@@ -161,7 +172,7 @@
       "level": 0,
       "location": "Gubuk",
       "pc": 0,
-      "exp": 31,
+      "exp": 185,
       "limit": 100,
       "token": 10,
       "skata": 0,
@@ -192,9 +203,9 @@
       "job": "Pengangguran",
       "role": "Newbie ㋡",
       "autolevelup": true,
-      "command": null,
-      "commandTotal": null,
-      "lastCmd": 1777542505744,
+      "command": 6,
+      "commandTotal": 6,
+      "lastCmd": 1778272359987,
       "pengeluaran": 0,
       "energi": 100,
       "title": 0,
@@ -252,7 +263,7 @@
       "level": 0,
       "location": "Gubuk",
       "pc": 0,
-      "exp": 13,
+      "exp": 111,
       "limit": 100,
       "token": 10,
       "skata": 0,
@@ -288,9 +299,9 @@
       "title": 0,
       "coin": 0,
       "bank": 0,
-      "command": null,
-      "commandTotal": null,
-      "lastCmd": 1777616311115
+      "command": 6,
+      "commandTotal": 6,
+      "lastCmd": 1777782369761
     },
     "249348621369556@lid": {
       "taxi": 0,
@@ -341,7 +352,7 @@
       "level": 0,
       "location": "Gubuk",
       "pc": 0,
-      "exp": 8,
+      "exp": 160,
       "limit": 100,
       "token": 10,
       "skata": 0,
@@ -376,7 +387,10 @@
       "energi": 100,
       "title": 0,
       "coin": 0,
-      "bank": 0
+      "bank": 0,
+      "command": 3,
+      "commandTotal": 3,
+      "lastCmd": 1778009942925
     }
   },
   "chats": {
@@ -1826,10 +1840,10 @@
           "bannedTime": 0,
           "chat": 0,
           "chatTotal": 0,
-          "command": 28,
-          "commandTotal": 28,
+          "command": 29,
+          "commandTotal": 29,
           "lastseen": 0,
-          "lastCmd": 1777616311115
+          "lastCmd": 1777774111537
         },
         "130524911800339@lid@s.whatsapp.net": {
           "blacklist": false,
@@ -1899,10 +1913,10 @@
           "bannedTime": 0,
           "chat": 0,
           "chatTotal": 0,
-          "command": 7,
-          "commandTotal": 7,
+          "command": 10,
+          "commandTotal": 10,
           "lastseen": 0,
-          "lastCmd": 1777492225076
+          "lastCmd": 1778009942925
         },
         "258149730799767@lid": {
           "blacklist": false,
@@ -1910,10 +1924,10 @@
           "bannedTime": 0,
           "chat": 0,
           "chatTotal": 0,
-          "command": 1,
-          "commandTotal": 1,
+          "command": 2,
+          "commandTotal": 2,
           "lastseen": 0,
-          "lastCmd": 1775626764518
+          "lastCmd": 1778237468597
         },
         "221203734204662@lid": {
           "blacklist": false,
@@ -1932,16 +1946,16 @@
           "bannedTime": 0,
           "chat": 0,
           "chatTotal": 0,
-          "command": 49,
-          "commandTotal": 49,
+          "command": 50,
+          "commandTotal": 50,
           "lastseen": 0,
-          "lastCmd": 1777590388150
+          "lastCmd": 1778010836616
         }
       },
       "memberStats": {
         "6282215415550@s.whatsapp.net": {
-          "chatCount": 29,
-          "lastSeen": 1777616311114
+          "chatCount": 30,
+          "lastSeen": 1777774111537
         },
         "130524911800339@lid@s.whatsapp.net": {
           "chatCount": 10,
@@ -1960,20 +1974,20 @@
           "lastSeen": 1775626765019
         },
         "258149730799767@lid": {
-          "chatCount": 4,
-          "lastSeen": 1777590489368
+          "chatCount": 5,
+          "lastSeen": 1778237468594
         },
         "6285591068997@s.whatsapp.net": {
-          "chatCount": 6,
-          "lastSeen": 1777590911692
+          "chatCount": 10,
+          "lastSeen": 1778009942925
         },
         "221203734204662@lid": {
           "chatCount": 4,
           "lastSeen": 1777590091930
         },
         "6285324023198@s.whatsapp.net": {
-          "chatCount": 44,
-          "lastSeen": 1777590762892
+          "chatCount": 47,
+          "lastSeen": 1778053735176
         }
       },
       "expired": 0,
@@ -2465,12 +2479,27 @@
           "command": 0,
           "commandTotal": 0,
           "lastseen": 0
+        },
+        "6282215415550@s.whatsapp.net": {
+          "blacklist": false,
+          "banned": false,
+          "bannedTime": 0,
+          "chat": 0,
+          "chatTotal": 0,
+          "command": 5,
+          "commandTotal": 5,
+          "lastseen": 0,
+          "lastCmd": 1777782369761
         }
       },
       "memberStats": {
         "6285591068997@s.whatsapp.net": {
-          "chatCount": 7,
-          "lastSeen": 1775627709457
+          "chatCount": 10,
+          "lastSeen": 1777721407591
+        },
+        "6282215415550@s.whatsapp.net": {
+          "chatCount": 4,
+          "lastSeen": 1777782369758
         }
       },
       "expired": 0,
@@ -2639,10 +2668,10 @@
       "lastSuccess": 1773593201474
     },
     "sticker-sticker.js": {
-      "total": 222,
-      "success": 221,
-      "last": 1776368891485,
-      "lastSuccess": 1776368891485
+      "total": 223,
+      "success": 222,
+      "last": 1778237476851,
+      "lastSuccess": 1778237476851
     },
     "downloader-pindl.js": {
       "total": 32,
@@ -2657,10 +2686,10 @@
       "lastSuccess": 1777563688098
     },
     "menu.js": {
-      "total": 801,
-      "success": 801,
-      "last": 1777616311653,
-      "lastSuccess": 1777616311653
+      "total": 805,
+      "success": 805,
+      "last": 1778271605507,
+      "lastSuccess": 1778271605507
     },
     "_AI-agedetect.js": {
       "total": 7,
@@ -2759,10 +2788,10 @@
       "lastSuccess": 1775116752925
     },
     "owner-clearsessions.js": {
-      "total": 66,
-      "success": 66,
-      "last": 1777106410116,
-      "lastSuccess": 1777106410116
+      "total": 67,
+      "success": 67,
+      "last": 1778260277624,
+      "lastSuccess": 1778260277624
     },
     "fun-taugasi.js": {
       "total": 4,
@@ -2825,10 +2854,10 @@
       "lastSuccess": 1773511014662
     },
     "owner-backupsc.js": {
-      "total": 53,
-      "success": 53,
-      "last": 1777493021707,
-      "lastSuccess": 1777493021707
+      "total": 54,
+      "success": 54,
+      "last": 1778257503991,
+      "lastSuccess": 1778257503991
     },
     "image-anime.js": {
       "total": 3,
@@ -2837,10 +2866,10 @@
       "lastSuccess": 1770955490666
     },
     "owner-cleartmp.js": {
-      "total": 39,
-      "success": 39,
-      "last": 1777106412600,
-      "lastSuccess": 1777106412600
+      "total": 40,
+      "success": 40,
+      "last": 1778260286033,
+      "lastSuccess": 1778260286033
     },
     "owner-self.js": {
       "total": 12,
@@ -2975,10 +3004,10 @@
       "lastSuccess": 1773707258116
     },
     "owner-database.js": {
-      "total": 10,
-      "success": 10,
-      "last": 1776953421613,
-      "lastSuccess": 1776953421613
+      "total": 11,
+      "success": 11,
+      "last": 1778271565390,
+      "lastSuccess": 1778271565390
     },
     "internet-cosplay.js": {
       "total": 2,
@@ -3975,10 +4004,10 @@
       "lastSuccess": 1773172615514
     },
     "ai-mitra.js": {
-      "total": 156,
-      "success": 153,
-      "last": 1777492227430,
-      "lastSuccess": 1777492227430
+      "total": 157,
+      "success": 154,
+      "last": 1778258828587,
+      "lastSuccess": 1778258828587
     },
     "asisten-rekap.js": {
       "total": 19,
@@ -4263,10 +4292,10 @@
       "lastSuccess": 1773779943380
     },
     "owner-findplugin.js": {
-      "total": 135,
-      "success": 135,
-      "last": 1777590214178,
-      "lastSuccess": 1777590214178
+      "total": 137,
+      "success": 137,
+      "last": 1778264788942,
+      "lastSuccess": 1778264788942
     },
     "internet-cuaca.js": {
       "total": 14,
@@ -4413,10 +4442,10 @@
       "lastSuccess": 1775996724437
     },
     "owner-findcode.js": {
-      "total": 81,
-      "success": 81,
-      "last": 1777548707228,
-      "lastSuccess": 1777548707228
+      "total": 89,
+      "success": 89,
+      "last": 1778272477974,
+      "lastSuccess": 1778272477974
     },
     "group-poll.js": {
       "total": 3,
@@ -4467,10 +4496,10 @@
       "lastSuccess": 1775476361857
     },
     "owner-getfile.js": {
-      "total": 59,
-      "success": 53,
-      "last": 1777621753314,
-      "lastSuccess": 1777621753314
+      "total": 62,
+      "success": 55,
+      "last": 1778264902761,
+      "lastSuccess": 1778264902761
     },
     "owner-deletefile.js": {
       "total": 23,
@@ -4545,10 +4574,10 @@
       "lastSuccess": 1773579522640
     },
     "ai-vebriy.js": {
-      "total": 57,
-      "success": 57,
-      "last": 1777590170912,
-      "lastSuccess": 1777590170912
+      "total": 58,
+      "success": 58,
+      "last": 1778258887609,
+      "lastSuccess": 1778258887609
     },
     "gratis.js": {
       "total": 2,
@@ -4557,10 +4586,10 @@
       "lastSuccess": 1773586901355
     },
     "info-ping.js": {
-      "total": 345,
-      "success": 345,
-      "last": 1777499249428,
-      "lastSuccess": 1777499249428
+      "total": 359,
+      "success": 359,
+      "last": 1778272360424,
+      "lastSuccess": 1778272360424
     },
     "info-info_bot.js": {
       "total": 3,
@@ -4977,10 +5006,10 @@
       "lastSuccess": 1777563855575
     },
     "owner-github.js": {
-      "total": 81,
-      "success": 81,
-      "last": 1777621488580,
-      "lastSuccess": 1777621488580
+      "total": 82,
+      "success": 82,
+      "last": 1777621775439,
+      "lastSuccess": 1777621775439
     },
     "rpg-hitman.js": {
       "total": 2,
@@ -5433,10 +5462,10 @@
       "lastSuccess": 0
     },
     "owner-findcommand.js": {
-      "total": 84,
-      "success": 84,
-      "last": 1777564080803,
-      "lastSuccess": 1777564080803
+      "total": 85,
+      "success": 85,
+      "last": 1778271617775,
+      "lastSuccess": 1778271617775
     },
     "allmenu.js": {
       "total": 21,
@@ -5697,10 +5726,10 @@
       "lastSuccess": 1775846222618
     },
     "main-profile.js": {
-      "total": 15,
-      "success": 14,
-      "last": 1776455937257,
-      "lastSuccess": 1776455937257
+      "total": 16,
+      "success": 15,
+      "last": 1778009944441,
+      "lastSuccess": 1778009944441
     },
     "owner_addgelar.js": {
       "total": 3,
@@ -6075,16 +6104,22 @@
       "lastSuccess": 1777501729019
     },
     "efootball-booster.js": {
-      "total": 3,
-      "success": 3,
-      "last": 1777502676763,
-      "lastSuccess": 1777502676763
-    },
-    "owner-tree.js": {
       "total": 4,
       "success": 4,
-      "last": 1777621734334,
-      "lastSuccess": 1777621734334
+      "last": 1777782356865,
+      "lastSuccess": 1777782356865
+    },
+    "owner-tree.js": {
+      "total": 5,
+      "success": 5,
+      "last": 1778260915142,
+      "lastSuccess": 1778260915142
+    },
+    "info-speedtest.js": {
+      "total": 2,
+      "success": 2,
+      "last": 1778264828391,
+      "lastSuccess": 1778264828391
     }
   },
   "msgs": {},

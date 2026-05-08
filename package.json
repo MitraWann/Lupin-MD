@@ -38,9 +38,9 @@
     },
     "license": "MIT",
     "dependencies": {
-        "@adiwajshing/baileys": "npm:baileys",
         "@adiwajshing/keyed-db": "^0.2.4",
         "@vitalets/google-translate-api": "^9.0.0",
+        "@whiskeysockets/baileys": "^7.0.0-rc10",
         "awesome-phonenumber": "^2.64.0",
         "axios": "^1.13.6",
         "bycf": "^1.0.3",

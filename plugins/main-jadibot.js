@@ -15,7 +15,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args }) => {
     // ==========================================
     // SOLUSI ERROR ESM: Menggunakan Dynamic Import
     // ==========================================
-    const baileys = await import('@adiwajshing/baileys')
+    const baileys = await import('@whiskeysockets/baileys')
     const { useMultiFileAuthState, DisconnectReason, makeCacheableSignalKeyStore, Browsers } = baileys
     
     // MENGGUNAKAN WRAPPER: Agar mewarisi fungsi helper dasar (getName, decodeJid, dll)

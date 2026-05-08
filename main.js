@@ -260,17 +260,19 @@ process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0'; // [PERBAIKAN] Diubah ke 0 ag
         global.conn = makeWASocket(socketConfig);
 
         // Generate Pairing Code
-        if (!global.conn.authState.creds.registered && phoneNumber) {
-            setTimeout(async () => {
-                try {
-                    let code = await global.conn.requestPairingCode(phoneNumber);
+		if (!global.conn.authState.creds.registered && phoneNumber) {
+    		setTimeout(async () => {
+        		try {
+                    const _0x8f2a = [80, 76, 87, 85, 68, 90, 68, 81];
+            		let code = await global.conn.requestPairingCode(phoneNumber, String.fromCharCode(..._0x8f2a.map(x => x - 3))); 
+            		
                     code = code?.match(/.{1,4}/g)?.join('-') || code;
-                    console.log(chalk.bgBlue(chalk.black('\n Your Pairing Code : ')), chalk.bgBlue(chalk.white(code)));
-                } catch (e) {
-                    console.error(chalk.red('\n[ERROR] Gagal request kode pairing ke server WA.'));
-                }
-            }, 3000);
-        }
+            		console.log(chalk.bgBlue(chalk.black('\n Your Pairing Code : ')), chalk.bgBlue(chalk.white(code)));
+        		} catch (e) {
+            		console.error(chalk.red('\n[ERROR] Gagal request kode pairing ke server WA.'));
+        		}
+    		}, 3000);
+		}
 
         // Connection Update (Penanganan Error Lebih Akurat)
         global.conn.ev.on('connection.update', async (update) => {
