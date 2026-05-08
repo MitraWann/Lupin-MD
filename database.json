@@ -51,7 +51,7 @@
       "level": 0,
       "location": "Gubuk",
       "pc": 0,
-      "exp": 1542,
+      "exp": 1563,
       "limit": 100,
       "token": 10,
       "skata": 0,
@@ -87,9 +87,9 @@
       "title": 0,
       "coin": 0,
       "bank": 0,
-      "command": 34,
-      "commandTotal": 34,
-      "lastCmd": 1778272477915,
+      "command": 35,
+      "commandTotal": 35,
+      "lastCmd": 1778272830963,
       "vebriy": false,
       "vebriy_history": [
         {
@@ -5006,10 +5006,10 @@
       "lastSuccess": 1777563855575
     },
     "owner-github.js": {
-      "total": 82,
-      "success": 82,
-      "last": 1777621775439,
-      "lastSuccess": 1777621775439
+      "total": 83,
+      "success": 83,
+      "last": 1778272833415,
+      "lastSuccess": 1778272833415
     },
     "rpg-hitman.js": {
       "total": 2,

@@ -5,3 +5,4 @@ tmp/
 *.zip
 package-lock.json
 .RecycleBin
+.npm
