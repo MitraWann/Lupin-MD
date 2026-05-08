@@ -5,91 +5,70 @@ const { createCanvas, loadImage } = require('canvas') // Menambahkan library can
 
 let handler = async (m, { conn, usedPrefix, command, text }) => {
   let who = m.quoted ? m.quoted.sender : (m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : (text ? (text.replace(/[^0-9]/g, '') + '@s.whatsapp.net') : m.sender))
-
+  
+  // 1. Resolve PN (Phone Number) untuk Database (Mencegah reset data limit/uang)
+  let pn = who;
+  if (typeof conn.getJid === 'function') {
+      pn = await conn.getJid(who) || who;
+  }
+  who = pn; // Tetap gunakan who sebagai standar PN agar kompatibel di sisa kode
   if (!who.includes('@')) who += '@s.whatsapp.net'
 
+  // 2. Resolve LID (Linked Device) untuk System & UI
+  let lid = 'Tidak diketahui';
+  if (who.endsWith('@lid')) {
+      lid = who;
+  } else {
+      // Cari LID dari partisipan grup
+      if (m.isGroup) {
+          try {
+              let groupMetadata = await conn.groupMetadata(m.chat);
+              let participant = groupMetadata.participants.find(p => p.id === who);
+              if (participant && participant.lid) {
+                  lid = participant.lid;
+              }
+          } catch (e) {
+          }
+      }
+      // Fallback cari LID di Cache jika tidak ketemu di metadata grup
+      if (lid === 'Tidak diketahui' && conn.isLid) {
+          let keys = conn.isLid.keys();
+          for (let key of keys) {
+              if (conn.isLid.get(key) === who) {
+                  lid = key;
+                  break;
+              }
+          }
+      }
+  }
+
   let users = global.db.data.users
-  // Database fallback: Menghapus 'unlockedTitles' dan 'activeTitle'
-  if (!users[who]) users[who] = { exp: 0, limit: 10, lastclaim: 0, registered: false, name: '', age: -1, regTime: -1, premium: false, premiumTime: 0, level: 0, money: 0, role: 'Newbie ㋡', banned: false }
+  
+  if (!users[who]) {
+      users[who] = { exp: 0, limit: 10, lastclaim: 0, registered: false, name: '', age: -1, regTime: -1, premium: false, premiumTime: 0, level: 0, money: 0, role: 'Newbie ㋡', banned: false }
+  }
 
   let user = users[who]
   
-  // Destructuring bersih tanpa activeTitle
+  // Destructuring bersih
   let { name, limit, exp, money, lastclaim, premiumTime, premium, registered, age, level } = user
   let username = registered ? name : await conn.getName(who) || 'User';
 
   // Get Profile Picture dengan fallback UI Avatars jika tidak ada/diprivasi
   let ppUrl = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXIdvC1Q4WL7_zA6cJm3yileyBT2OsWhBb9Q&usqp=CAU'
   try { 
-      ppUrl = await conn.profilePictureUrl(who, 'image') 
+      // Coba fetch PP via LID terlebih dahulu (Bypass privasi PP WA terbaru)
+      ppUrl = await conn.profilePictureUrl(lid !== 'Tidak diketahui' ? lid : who, 'image') 
   } catch (e) {
-      ppUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(username)}&background=random&color=fff&size=512`;
+      try {
+          // Fallback fetch via PN normal
+          ppUrl = await conn.profilePictureUrl(who, 'image') 
+      } catch (e) {
+          // Jika masih disembunyikan/tidak ada PP, gunakan nama fallback avatar
+          ppUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(username)}&background=random&color=fff&size=512`;
+      }
   }
   let about = ''; try { about = (await conn.fetchStatus(who)).status || '' } catch {}
-
-  // 1. DYNAMIC RPG ROLE SYNC (Sesuai rpg-checkrole.js)
-  let role = (level <= 2) ? 'Newbie ㋡'
-    : (level <= 4) ? 'Beginner Grade 1 ⚊¹'
-    : (level <= 6) ? 'Beginner Grade 2 ⚊²'
-    : (level <= 8) ? 'Beginner Grade 3 ⚊³'
-    : (level <= 10) ? 'Beginner Grade 4 ⚊⁴'
-    : (level <= 20) ? 'Private Grade 1 ⚌¹'
-    : (level <= 30) ? 'Private Grade 2 ⚌²'
-    : (level <= 40) ? 'Private Grade 3 ⚌³'
-    : (level <= 50) ? 'Private Grade 4 ⚌⁴'
-    : (level <= 60) ? 'Private Grade 5 ⚌⁵'
-    : (level <= 70) ? 'Corporal Grade 1 ☰¹' 
-    : (level <= 80) ? 'Corporal Grade 2 ☰²' 
-    : (level <= 90) ? 'Corporal Grade 3 ☰³' 
-    : (level <= 100) ? 'Corporal Grade 4 ☰⁴' 
-    : (level <= 110) ? 'Corporal Grade 5 ☰⁵'
-    : (level <= 120) ? 'Sergeant Grade 1 ≣¹'
-    : (level <= 130) ? 'Sergeant Grade 2 ≣²'
-    : (level <= 140) ? 'Sergeant Grade 3 ≣³'
-    : (level <= 150) ? 'Sergeant Grade 4 ≣⁴'
-    : (level <= 160) ? 'Sergeant Grade 5 ≣⁵' 
-    : (level <= 170) ? 'Staff Grade 1 ﹀¹' 
-    : (level <= 180) ? 'Staff Grade 2 ﹀²' 
-    : (level <= 190) ? 'Staff Grade 3 ﹀³' 
-    : (level <= 200) ? 'Staff Grade 4 ﹀⁴' 
-    : (level <= 210) ? 'Staff Grade 5 ﹀⁵' 
-    : (level <= 220) ? 'Sergeant Grade 1 ︾¹'
-    : (level <= 230) ? 'Sergeant Grade 2 ︾²'
-    : (level <= 240) ? 'Sergeant Grade 3 ︾³'
-    : (level <= 250) ? 'Sergeant Grade 4 ︾⁴'
-    : (level <= 260) ? 'Sergeant Grade 5 ︾⁵'
-    : (level <= 270) ? '2nd Lt. Grade 1 ♢¹'
-    : (level <= 280) ? '2nd Lt. Grade 2 ♢²'  
-    : (level <= 290) ? '2nd Lt. Grade 3 ♢³' 
-    : (level <= 300) ? '2nd Lt. Grade 4 ♢⁴' 
-    : (level <= 310) ? '2nd Lt. Grade 5 ♢⁵'
-    : (level <= 320) ? '1st Lt. Grade 1 ♢♢¹'
-    : (level <= 330) ? '1st Lt. Grade 2 ♢♢²'
-    : (level <= 340) ? '1st Lt. Grade 3 ♢♢³'
-    : (level <= 350) ? '1st Lt. Grade 4 ♢♢⁴'
-    : (level <= 360) ? '1st Lt. Grade 5 ♢♢⁵'
-    : (level <= 370) ? 'Major Grade 1 ✷¹'
-    : (level <= 380) ? 'Major Grade 2 ✷²'
-    : (level <= 390) ? 'Major Grade 3 ✷³'
-    : (level <= 400) ? 'Major Grade 4 ✷⁴'
-    : (level <= 410) ? 'Major Grade 5 ✷⁵'
-    : (level <= 420) ? 'Colonel Grade 1 ✷✷¹'
-    : (level <= 430) ? 'Colonel Grade 2 ✷✷²'
-    : (level <= 440) ? 'Colonel Grade 3 ✷✷³'
-    : (level <= 450) ? 'Colonel Grade 4 ✷✷⁴'
-    : (level <= 460) ? 'Colonel Grade 5 ✷✷⁵'
-    : (level <= 470) ? 'Brigadier Early ✰'
-    : (level <= 480) ? 'Brigadier Silver ✩'
-    : (level <= 490) ? 'Brigadier gold ✯' 
-    : (level <= 500) ? 'Brigadier Platinum ✬'
-    : (level <= 600) ? 'Brigadier Diamond ✪'
-    : (level <= 700) ? 'Legendary 忍'
-    : (level <= 800) ? 'Legendary 忍忍'
-    : (level <= 900) ? 'Legendary 忍忍忍'
-    : (level <= 1000) ? 'Legendary忍忍忍忍'
-    : 'Infinity 숒';
-  
-  user.role = role
 
   // 2. TULIPNEX TRADER CALCULATION & BOARD
   let p = global.db.data.settings?.trading?.prices || {}
@@ -117,7 +96,6 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
   // 3. XP LOGIC
   let { min, xp, max } = levelling.xpRange(level, global.multiplier)
   let currentXpInLevel = exp - min
-  let remainingXp = max - exp
   let sn = createHash('md5').update(who).digest('hex').substring(0, 12)
 
   // LOGIKA TAMPILAN UI
@@ -125,13 +103,11 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
 *╭───[ 👤 PROFILE USER ]───*
 *│* 🆔 *Nama:* ${username}
 *│* 🏷️ *Tag:* @${who.split('@')[0]}
-*│* 📝 *Bio:* ${about || 'Tidak ada bio'}
 *│* 🎂 *Umur:* ${registered ? age + ' thn' : '-'}
 *╰──────────────────*
 
 *╭───[ ⚔️ RPG STATS ]───*
 *│* 📊 *Level:* ${level}
-*│* 🔰 *Role:* ${role}
 *│* ✨ *Exp:* ${currentXpInLevel.toLocaleString('id-ID')} / ${xp.toLocaleString('id-ID')}
 *│* 💎 *Limit:* ${limit.toLocaleString('id-ID')}
 *╰──────────────────*
@@ -198,7 +174,6 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
 
       finalImage = canvas.toBuffer('image/png');
   } catch (e) {
-      console.error("Canvas Profile Error:", e);
       // Fallback: Jika render canvas gagal, kirim foto profil secara langsung (default WhatsApp)
       finalImage = { url: ppUrl };
   }

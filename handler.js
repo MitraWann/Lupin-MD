@@ -15,7 +15,7 @@ module.exports = {
         if (!m) return
         
         try {
-            m = simple.smsg(this, m) || m
+            m = (await simple.smsg(this, m)) || m
             if (!m) return
             
             m.exp = 0
@@ -35,10 +35,6 @@ module.exports = {
                     if (!isNumber(user.exp)) user.exp = 0
                     if (!isNumber(user.pc)) user.pc = 0
                     if (!isNumber(user.ojek)) user.ojek = 0
-                    if (!isNumber(user.pedagang)) user.pedagang = 0
-                    if (!isNumber(user.dokter)) user.dokter = 0
-                    if (!isNumber(user.montir)) user.montir = 0
-                    if (!isNumber(user.kuli)) user.kuli = 0
                     if (!isNumber(user.coin)) user.coin = 0
                     if (!isNumber(user.limit)) user.limit = 100
                     if (!isNumber(user.token)) user.token = 10 
@@ -46,7 +42,6 @@ module.exports = {
                     if (!isNumber(user.money)) user.money = 0
                     if (!isNumber(user.poin)) user.poin = 0
                     if (!isNumber (user.bank)) user.bank = 0
-                    if (!isNumber (user.balance)) user.balance = 0
                     if (!isNumber(user.warn)) user.warn = 0
                     if (!('banned' in user)) user.banned = false
                     if (!isNumber(user.bannedTime)) user.bannedTime = 0
@@ -73,7 +68,7 @@ module.exports = {
                     } 
                 } else {
                     global.db.data.users[m.sender] = {
-                        taxi: 0, lasttaxi: 0, saldo: 0, level: 0, location: 'Gubuk', pc : 0, exp: 0, limit: 100, token: 10, skata: 0, lastkerja: 0, money: 0, poin: 0, balance: 0, ojek: 0, pedagang: 0, dokter: 0, petani: 0, montir: 0, kuli: 0, banned: false, bannedTime: 0, warn: 0, afk: -1, afkReason: '', antispam: 0, lastngojek: 0, lastseen: 0, registered: false, name: this.getName(m.sender), age: -1, regTime: -1, premium: false, premiumTime: 0, job: 'Pengangguran', role: 'Newbie ㋡', autolevelup: true,
+                        taxi: 0, lasttaxi: 0, saldo: 0, level: 0, location: 'Gubuk', pc : 0, exp: 0, limit: 100, token: 10, skata: 0, lastkerja: 0, money: 0, poin: 0, balance: 0, ojek: 0, banned: false, bannedTime: 0, warn: 0, afk: -1, afkReason: '', antispam: 0, lastngojek: 0, lastseen: 0, registered: false, name: this.getName(m.sender), age: -1, regTime: -1, premium: false, premiumTime: 0, job: 'Pengangguran', role: 'Newbie ㋡', autolevelup: true,
                     }
                 }
 
@@ -381,26 +376,6 @@ module.exports = {
                     user.exp += m.exp
                     user.limit -= m.limit * 1
                     user.token -= m.token * 1 
-                }
-
-                let stat
-                if (m.plugin) {
-                    let now = + new Date
-                    if (m.plugin in stats) {
-                        stat = stats[m.plugin]
-                        if (!isNumber(stat.total)) stat.total = 1
-                        if (!isNumber(stat.success)) stat.success = m.error != null ? 0 : 1
-                        if (!isNumber(stat.last)) stat.last = now
-                        if (!isNumber(stat.lastSuccess)) stat.lastSuccess = m.error != null ? 0 : now
-                    } else stat = stats[m.plugin] = {
-                        total: 1, success: m.error != null ? 0 : 1, last: now, lastSuccess: m.error != null ? 0 : now
-                    }
-                    stat.total += 1
-                    stat.last = now
-                    if (m.error == null) {
-                        stat.success += 1
-                        stat.lastSuccess = now
-                    }
                 }
             }
 

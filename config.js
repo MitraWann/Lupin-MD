@@ -16,8 +16,6 @@ global.stiker_wait = "*⫹⫺ Stiker sedang dibuat...*"; // ini pesan simulasi s
 global.packname = "Created-By"; // watermark stikcker packname
 global.author = "Mitraaa"; // watermark stikcker author
 global.maxwarn = "5"; // Peringatan maksimum Warn
-global.api_gsheet = 'https://script.google.com/macros/s/AKfycby_fTiUoHegm0lEo8dPd0WsdsBCm45_lxT3F8a_jXabLmau2y8lHzKbSVFQGA_fcXbL/exec' // Simpan URL Web App Google Apps Script di sini
-global.gemini = "AIzaSyDmrHqL_m9OMmknG26yKPKF_Tffq5IWumA" // Ganti dengan API Key Anda
 global.nytApiKey = 'a7mMCVwS0o40SUo3aqWkDxTAfL51vI7XYsCAAKBSx9uRbAUG';
 
 
